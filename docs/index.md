@@ -2,24 +2,11 @@
 
 Autor: Adrian  Muñoz Garcia
 Fecha: (añadir fecha)  
-Descripción: Resumen de elementos, depuración, pruebas, ejecución en Sandbox y reflexión sobre seguridad.
-
-Tabla de contenido
-- [Elementos de Python](#elementos-de-python)
-- [Ejecución y Depuración](#ejecución-y-depuración)
-- [Pruebas](#pruebas)
-- [Ejecución en Sandbox](#ejecución-en-sandbox)
-- [Reflexión](#reflexión)
-
-## Elementos de Python
-Breve listado sobre qué se incluye:
-- Código fuente comentado 
-- Notebook con ejemplos y comentarios: `notebooks/analisis.ipynb` (enlazar desde aquí si procede).
-- Dependencias: `requirements.txt` o `pyproject.toml`.
-
-Enlace al Jupyter Notebook:
-[Lavadero documentado](lavadero_documentado_Adrian.ipynb)
-[Main app Lavader documentado](Main_app_documentado_Adrian.ipynb)
+[Elementos de Python](Elementos_de_Python.md)
+[Ejecución y Depuración](Ejecucion_y_Depuracion.md)
+[Pruebas](Pruebas.md)
+[Ejecución en Sandbox](Ejecucion_en_Sandbox.md)
+[Reflexión](Reflexion.md)
 
 ## Ejecución y Depuración
 Problemas encontrados (ejemplos concisos):
