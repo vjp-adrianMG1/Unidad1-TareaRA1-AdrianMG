@@ -2,11 +2,11 @@
 
 Autor: Adrian  Muñoz Garcia
 Fecha: (añadir fecha)  
-[Elementos de Python](Elementos_de_Python.md)
-[Ejecución y Depuración](Ejecucion_y_Depuracion.md)
-[Pruebas](Pruebas.md)
-[Ejecución en Sandbox](Ejecucion_en_Sandbox.md)
-[Reflexión](Reflexion.md)
+[Elementos de Python](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Elementos_de_Python)
+[Ejecución y Depuración](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Ejecucion_y_Depuracion)
+[Pruebas](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Pruebas)
+[Ejecución en Sandbox](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Ejecucion_en_Sandbox)
+[Reflexión](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Reflexion)
 
 ## Ejecución y Depuración
 Problemas encontrados (ejemplos concisos):
