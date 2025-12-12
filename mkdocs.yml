@@ -1,0 +1,30 @@
+# Nombre del sitio que aparece en la cabecera y pestañas del navegador
+site_name: Gestor de Lavadero de Coches
+
+# Breve descripción del sitio usada para SEO y meta-descripción
+site_description: Proyecto educativo en Python con ejemplos de estructuras, funciones y pruebas.
+
+# Autor del sitio (se muestra en plantillas o metadatos)
+site_author: Adrian Munoz Garcia
+
+# URL del repositorio (material muestra icono/links al repo si está configurado)
+repo_url: https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG
+
+theme:
+  # Tema utilizado por MkDocs (aquí mkdocs-material)
+  name: material
+  # Idioma del tema (traduce botones y textos por defecto)
+  language: es
+  palette:
+    # Color primario de la paleta del tema
+    primary: blue
+    # Color de acento para elementos destacados
+    accent: cyan
+
+nav:
+  - Inicio: index.md
+  - Elementos de Python: Elementos_de_Python.md
+  - Ejecución y Depuración: Ejecucion_y_Depuracion.md
+  - Ejecución en Sandbox: Ejecucuion_en_Sandbox.md
+  - Pruebas: Pruebas.md
+  - Reflexión: Reflexion.md
