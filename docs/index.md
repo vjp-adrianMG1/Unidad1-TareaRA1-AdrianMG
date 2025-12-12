@@ -11,7 +11,8 @@ Fecha: (añadir fecha)
 ## Elementos de Python
 Enlace para ver el código comentado con Markdown:
 
-[Código comentado: lavadero_documentado_Adrian.ipynb](lavadero_documentado_Adrian.ipynb)
+[Código comentado: lavadero_documentado_Adrian.md](lavadero_documentado_Adrian.md)
+[Código comentado: Main_app_documentado_Adrian.md](Main_app_documentado_Adrian.md)
 
 ## Ejecución y Depuración
 Problemas encontrados (ejemplos concisos):

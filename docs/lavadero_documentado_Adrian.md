@@ -2,8 +2,6 @@
 
 **Propósito del módulo:** Modelar un túnel de lavado con estados, reglas de negocio y secuencias de fases.
 
-**Propósito del módulo:** Modelar un túnel de lavado con estados, reglas de negocio y secuencias de fases.
-
 **Definición de clase Lavadero:** En Python, una clase agrupa datos (atributos) y comportamiento (métodos) de un objeto.
 
 **Docstring de clase:** El texto entre triple comillas describe el objetivo y alcance del componente, útil para documentación y ayuda integrada.

@@ -23,10 +23,5 @@ repo_url: https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG
 
 nav:
   - Inicio: index.md
-  - Elementos de Python: Elementos_de_Python.md
-  - Ejecución y Depuración: Ejecucion_y_Depuracion.md
-  - Ejecución en Sandbox: Ejecucuion_en_Sandbox.md
-  - Pruebas: Pruebas.md
-  - Reflexión: Reflexion.md
   - Lavadero Documentado: lavadero_documentado_Adrian.md
   - Main Lavadero Documentado: Main_app_documentado_Adrian.md
