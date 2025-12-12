@@ -41,20 +41,13 @@ Capturas de pantalla:
 - Inserta capturas a pantalla completa en `assets/screenshots/` (p. ej. `debug-fullscreen-1.png`).
 - Nota obligatoria: las capturas deben ser a pantalla completa y debe verse el terminal con tu nombre y/o la imagen de la plataforma Moodle para verificación.
 - Ejemplo de inclusión en Markdown:
-  ![Depuración - Terminal completo](assets/screenshots/debug-fullscreen-1.png)
 
 ## Pruebas
 Descripción de las pruebas realizadas:
 - Unitarias con `pytest`.
 - Tests de integración básicos para flujos críticos.
 
-Ejemplo de test (`tests/test_utils.py`):
-```python
-from src.utils import sumar
 
-def test_sumar():
-    assert sumar(2, 3) == 5
-```
 
 Ejecución de las pruebas:
 - Local: `pytest -q`
@@ -69,7 +62,7 @@ Proceso sugerido para ejecutar en una Sandbox (p. ej. Gitpod, Repl.it, o sandbox
 1. Importar el repositorio en la sandbox.
 2. Crear/activar el entorno y ejecutar `pip install -r requirements.txt`.
 3. Ejecutar tests y flujos principales: `pytest` y `python -m src.main`.
-4. Tomar capturas de pantalla de todo el proceso (pantalla completa) y guardarlas en `assets/screenshots/` (p. ej. `sandbox-run-1.png`).
+4. Tomar capturas de pantalla de todo el proceso (pantalla completa) y guardarlas en .
 
 Incluir comandos concretos y resultado esperado en el README para que el evaluador pueda reproducir el proceso.
 
