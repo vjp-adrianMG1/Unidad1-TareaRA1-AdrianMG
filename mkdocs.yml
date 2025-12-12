@@ -10,16 +10,16 @@ site_author: Adrian Munoz Garcia
 # URL del repositorio (material muestra icono/links al repo si está configurado)
 repo_url: https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG
 
-theme:
+# theme:
   # Tema utilizado por MkDocs (aquí mkdocs-material)
-  name: material
+  # name: material
   # Idioma del tema (traduce botones y textos por defecto)
-  language: es
-  palette:
+  # language: es
+  # palette:
     # Color primario de la paleta del tema
-    primary: blue
+    # primary: blue
     # Color de acento para elementos destacados
-    accent: cyan
+    # accent: cyan
 
 nav:
   - Inicio: index.md
