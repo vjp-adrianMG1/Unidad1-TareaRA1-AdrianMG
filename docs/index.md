@@ -8,6 +8,11 @@ Fecha: (añadir fecha)
 [Ejecución en Sandbox](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Ejecucion_en_Sandbox)
 [Reflexión](https://vjp-adrianmg1.github.io/Unidad1-TareaRA1-AdrianMG/Reflexion)
 
+## Elementos de Python
+Enlace para ver el código comentado con Markdown:
+
+[Código comentado: lavadero_documentado_Adrian.ipynb](lavadero_documentado_Adrian.ipynb)
+
 ## Ejecución y Depuración
 Problemas encontrados (ejemplos concisos):
 - Error de encoding al leer ficheros.
