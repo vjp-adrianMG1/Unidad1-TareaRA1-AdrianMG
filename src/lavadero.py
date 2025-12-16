@@ -83,7 +83,10 @@ class Lavadero:
     def _cobrar(self):
         """
         Calcula y añade los ingresos según las opciones seleccionadas (Requisitos 4-8).
-        Precio base: 5.00€ (Implícito, 5.00€ de base + 1.50€ de prelavado + 1.00€ de secado + 1.20€ de encerado = 8.70€)
+        Precio base: 5.00€ 
+        + 1.50€ prelavado 
+        + 1.00€ secado a mano 
+        + 1.20€ encerado
         """
         coste_lavado = 5.00
         
@@ -91,13 +94,14 @@ class Lavadero:
             coste_lavado += 1.50 
         
         if self.__secado_a_mano:
-            coste_lavado += 1.20 
+            coste_lavado += 1.00
             
         if self.__encerado:
-            coste_lavado += 1.00 
+            coste_lavado += 1.20
             
         self.__ingresos += coste_lavado
         return coste_lavado
+
 
     def avanzarFase(self):
        
@@ -176,14 +180,15 @@ class Lavadero:
 
     def ejecutar_y_obtener_fases(self, prelavado, secado, encerado):
         """Ejecuta un ciclo completo y devuelve la lista de fases visitadas."""
-        self.lavadero.hacerLavado(prelavado, secado, encerado)
-        fases_visitadas = [self.lavadero.fase]
-        
-        while self.lavadero.ocupado:
+        # Inicia el lavado con las opciones indicadas
+        self.hacerLavado(prelavado, secado, encerado)
+        fases_visitadas = [self.fase]
+    
+        while self.ocupado:
             # Usamos un límite de pasos para evitar bucles infinitos en caso de error
             if len(fases_visitadas) > 15:
                 raise Exception("Bucle infinito detectado en la simulación de fases.")
-            self.lavadero.avanzarFase()
-            fases_visitadas.append(self.lavadero.fase)
-            
+            self.avanzarFase()
+            fases_visitadas.append(self.fase)
+        
         return fases_visitadas
