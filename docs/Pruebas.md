@@ -2,7 +2,6 @@
 
 ## 1. Código de pruebas
 
-
 ---
 
 ``` bash
@@ -62,7 +61,7 @@ def test1_estado_inicial_correcto(self):
 
 ## 2. Ejecución inicial (código erróneo)
 
-_Aquí inserto captura de pantalla de la consola mostrando la salida con `ERROR` (AttributeError)._
+![Captura_de_los_test_unitarios_mal](../capturas/Ejecucion_de_todos_los_tests.png)
 
 ### Resumen
 | Test | Resultado esperado | Resultado obtenido |
@@ -73,6 +72,36 @@ _Aquí inserto captura de pantalla de la consola mostrando la salida con `ERROR`
 | Test 4–9 | Secuencias de fases e ingresos correctos | **ERROR** (AttributeError) |
 
 ---
+
+## 3. Corrección del método `ejecutar_y_obtener_fases`
+
+---
+
+Método con código erróneo
+![Captura_método_erróneo](../capturas/Ejecutar_y_obtener_fases_mal.png)
+
+En la ejecución inicial, varios tests daban **ERROR** debido a un fallo en la implementación del método `ejecutar_y_obtener_fases`.  
+El error concreto era:
+
+```bash
+        AttributeError: 'Lavadero' object has no attribute 'lavadero'
+```
+
+Esto ocurría porque dentro del método se llamaba a `self.lavadero.hacerLavado(...)`, pero la clase `Lavadero` no tiene ningún atributo llamado `lavadero`.  
+
+### 🔧 Arreglo realizado
+- Se reemplazó la llamada incorrecta `self.lavadero.hacerLavado(...)` por `self.hacerLavado(...)`.  
+- Se ajustó también el acceso a las propiedades (`self.fase`, `self.ocupado`) para que usen directamente la instancia actual.  
+
+### 📌 Resultado tras el cambio
+- Los tests ya no lanzan **ERROR** por `AttributeError`.  
+- Ahora los tests se ejecutan y muestran **FAIL** en los casos donde la lógica de precios y fases aún no coincide con lo esperado.  
+- Esto permite avanzar en la depuración: primero corregimos la ejecución del método, y después ajustaremos la lógica de negocio (precios y fases).
+
+---
+
+_Aquí inserto captura de pantalla del código corregido del método `ejecutar_y_obtener_fases`._
+
 
 ## 3. Ejecución intermedia (tras corregir `ejecutar_y_obtener_fases`)
 
@@ -106,3 +135,4 @@ _Aquí inserto captura de pantalla de la consola mostrando la salida con todos l
 - **Antes:** el código tenía errores de implementación (`AttributeError`) y de lógica (precios y fases).  
 - **Después:** tras corregir el método `ejecutar_y_obtener_fases`, ajustar precios y secuencias de fases, todos los tests unitarios pasan correctamente.  
 - Esto demuestra que los **14 requisitos** están validados y el lavadero funciona según lo esperado.
+
