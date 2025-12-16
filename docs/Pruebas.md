@@ -91,7 +91,9 @@ Esto ocurría porque dentro del método se llamaba a `self.lavadero.hacerLavado(
 
 ### 🔧 Arreglo realizado
 - Se reemplazó la llamada incorrecta `self.lavadero.hacerLavado(...)` por `self.hacerLavado(...)`.  
-- Se ajustó también el acceso a las propiedades (`self.fase`, `self.ocupado`) para que usen directamente la instancia actual.  
+- Se ajustó también el acceso a las propiedades (`self.fase`, `self.ocupado`) para que usen directamente la instancia actual.
+
+![Captura_método_correcto](../capturas/Ejecutar_y_obtener_fases_bien.png)
 
 ### 📌 Resultado tras el cambio
 - Los tests ya no lanzan **ERROR** por `AttributeError`.  
@@ -100,39 +102,5 @@ Esto ocurría porque dentro del método se llamaba a `self.lavadero.hacerLavado(
 
 ---
 
-_Aquí inserto captura de pantalla del código corregido del método `ejecutar_y_obtener_fases`._
 
-
-## 3. Ejecución intermedia (tras corregir `ejecutar_y_obtener_fases`)
-
-_Aquí inserto captura de pantalla de la consola mostrando la salida con `FAIL` (ingresos y fases incorrectos)._
-
-### Resumen
-| Test | Resultado esperado | Resultado obtenido |
-|------|-------------------|--------------------|
-| Test 4 | Ingresos 6.50€, fases [0,1,2,3,4,5,6,0] | FAIL (Ingresos distintos) |
-| Test 5 | Ingresos 6.00€, fases [0,1,3,4,5,7,0] | FAIL (Ingresos 6.20€, fases incorrectas) |
-| Test 6 | Ingresos 7.20€, fases [0,1,3,4,5,7,8,0] | FAIL (faltaba fase 8) |
-| Test 7 | Ingresos 7.50€, fases [0,1,2,3,4,5,7,0] | FAIL |
-| Test 8 | Ingresos 8.70€, fases [0,1,2,3,4,5,7,8,0] | FAIL |
-| Test 9 | Ingresos 5.00€, fases [0,1,3,4,5,6,0] | FAIL |
-
----
-
-## 4. Ejecución final (código corregido)
-
-_Aquí inserto captura de pantalla de la consola mostrando la salida con todos los tests en verde (OK)._
-
-### Resumen
-| Test | Resultado esperado | Resultado obtenido |
-|------|-------------------|--------------------|
-| Test 1–9 | Todos los ingresos y fases correctos | OK |
-
----
-
-## 5. Conclusión
-
-- **Antes:** el código tenía errores de implementación (`AttributeError`) y de lógica (precios y fases).  
-- **Después:** tras corregir el método `ejecutar_y_obtener_fases`, ajustar precios y secuencias de fases, todos los tests unitarios pasan correctamente.  
-- Esto demuestra que los **14 requisitos** están validados y el lavadero funciona según lo esperado.
 
