@@ -8,7 +8,7 @@ En esta sección se documenta el proceso de ejecución inicial, identificación 
 
 Al ejecutar por primera vez el script proporcionado, se produce un error que impide el funcionamiento correcto de la aplicación.
 
-![Captura error](../capturas/Solucion_de_error.png)
+![Captura error](../capturas/Error_En_Codigo.png)
 
 **Descripción del error:**
 
@@ -20,7 +20,8 @@ El error se debe a que se intenta aplicar la opción de encerado sin haber activ
 
 Tras analizar el error, se procede a modificar el código fuente para cumplir con la lógica requerida por la aplicación.
 
-![Captura error](../capturas/Ejecucion_de_nuevo_del_codigo.png)
+![Captura error](../capturas/Solucion_de_error.png)
+
 
 **Explicación de la solución:**
 
@@ -32,7 +33,8 @@ Se ha ajustado la función `ejecutarSimulacion()` para que valide correctamente 
 
 Una vez corregido el código, se vuelve a ejecutar la aplicación para verificar que el error ha sido solucionado y que el programa funciona correctamente.
 
-![Captura error](../capturas/Error_En_Codigo.png)
+![Captura error](../capturas/Ejecucion_de_nuevo_del_codigo.png)
+
 
 **Resultado:**
 
@@ -43,3 +45,4 @@ La aplicación se ejecuta correctamente, procesando las fases del lavado sin lan
 ## Conclusión
 
 Este proceso ha permitido identificar una incoherencia en la lógica de negocio del programa, aplicar una solución efectiva y verificar su funcionamiento mediante pruebas. La documentación visual y explicativa garantiza la trazabilidad del error y su resolución.
+
