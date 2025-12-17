@@ -100,12 +100,4 @@ if __name__ == "__main__":
     print("EJEMPLO 7: Prelavado (S), Secado a mano (S)")
     ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=True, encerado=False)
 
-    # EJEMPLO 8: Intentar iniciar un lavado mientras otro está en marcha (Requisito 3)
-    print("\n=======================================================")
-    print("EJEMPLO 8: ERROR (Lavado en marcha, intento de iniciar otro)")
-    try:
-        lavadero_global.hacerLavado(prelavado=False, secado_mano=False, encerado=False)
-        lavadero_global.hacerLavado(prelavado=True, secado_mano=True, encerado=True)  # Debe lanzar RuntimeError
-    except RuntimeError as e:
-        print(f"ERROR DE ESTADO: {e}")
     
