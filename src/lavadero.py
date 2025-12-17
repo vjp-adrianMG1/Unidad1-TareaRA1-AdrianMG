@@ -138,8 +138,10 @@ class Lavadero:
             self.terminar()
         
         elif self.__fase == self.FASE_SECADO_MANO:
-
-            self.terminar() 
+            if self.__encerado:
+                self.__fase = self.FASE_ENCERADO
+            else:
+                self.terminar()
         
         elif self.__fase == self.FASE_ENCERADO:
             self.terminar() 
