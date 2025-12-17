@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Adrian Munoz Garcia">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Main Lavadero Documentado - Gestor de Lavadero de Coches</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Gestor de Lavadero de Coches</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lavadero_documentado_Adrian/" class="nav-link">Lavadero Documentado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Main Lavadero Documentado</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../lavadero_documentado_Adrian/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG/edit/master/docs/Main_app_documentado_Adrian.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bloque-1-importacion" class="nav-link">Bloque 1: Importación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bloque-2-definicion-de-la-funcion-ejecutarsimulacion" class="nav-link">Bloque 2: Definición de la función ejecutarSimulacion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#bloque-3-punto-de-entrada-main-con-ejemplos" class="nav-link">Bloque 3: Punto de entrada (main) con ejemplos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="bloque-1-importacion">Bloque 1: Importación</h1>
+<ul>
+<li><strong>from lavadero import Lavadero:</strong> Importa la clase <code>Lavadero</code> definida en el archivo <code>lavadero.py</code>.  </li>
+<li><strong>Función:</strong> Permite usar en este script todas las operaciones y atributos del lavadero.  </li>
+<li><strong>Nota:</strong> En Python, la importación busca el archivo en el mismo directorio o en el <code>PYTHONPATH</code>.</li>
+</ul>
+<pre><code class="language-python"># main_app.py
+
+from lavadero import Lavadero
+
+</code></pre>
+<h1 id="bloque-2-definicion-de-la-funcion-ejecutarsimulacion">Bloque 2: Definición de la función ejecutarSimulacion</h1>
+<ul>
+<li><strong>Propósito:</strong> Simular un ciclo de lavado con las opciones dadas.  </li>
+<li><strong>Parámetros:</strong>  </li>
+<li><code>lavadero</code>: instancia de la clase Lavadero.  </li>
+<li><code>prelavado</code>: booleano, indica si se solicita prelavado a mano.  </li>
+<li><code>secado_mano</code>: booleano, indica si se solicita secado a mano.  </li>
+<li><code>encerado</code>: booleano, indica si se solicita encerado.  </li>
+<li><strong>Flujo de ejecución:</strong>  </li>
+<li>Imprime las opciones seleccionadas.  </li>
+<li>Llama a <code>hacerLavado()</code> para iniciar el ciclo.  </li>
+<li>Imprime el estado inicial del lavadero.  </li>
+<li>Avanza fase por fase en un bucle controlado por contador (máx. 20 pasos).  </li>
+<li>Imprime cada fase recorrida.  </li>
+<li>Al finalizar, muestra el estado final y los ingresos acumulados.  </li>
+<li><strong>Manejo de excepciones:</strong>  </li>
+<li><code>ValueError</code>: si se intenta encerar sin secado a mano.  </li>
+<li><code>RuntimeError</code>: si se intenta iniciar un lavado estando ocupado.  </li>
+<li><code>Exception</code>: cualquier otro error inesperado.</li>
+</ul>
+<pre><code class="language-python">def ejecutarSimulacion(lavadero, prelavado, secado_mano, encerado):
+    &quot;&quot;&quot;
+    Simula el proceso de lavado para un vehículo con las opciones dadas.
+    Ahora acepta una instancia de lavadero.
+    &quot;&quot;&quot;
+
+    print(&quot;--- INICIO: Prueba de Lavado con Opciones Personalizadas ---&quot;)
+    print(f&quot;Opciones solicitadas: [Prelavado: {prelavado}, Secado a mano: {secado_mano}, Encerado: {encerado}]&quot;)
+
+    try:
+        lavadero.hacerLavado(prelavado, secado_mano, encerado)
+        print(&quot;\nCoche entra. Estado inicial:&quot;)
+        lavadero.imprimir_estado()
+
+        print(&quot;\nAVANZANDO FASE POR FASE:&quot;)
+
+        pasos = 0
+        while lavadero.ocupado and pasos &lt; 20: 
+            lavadero.avanzarFase()
+            print(f&quot;-&gt; Fase actual: &quot;, end=&quot;&quot;)
+            lavadero.imprimir_fase()
+            print() 
+            pasos += 1
+
+        print(&quot;\n----------------------------------------&quot;)
+        print(&quot;Lavado completo. Estado final:&quot;)
+        lavadero.imprimir_estado()
+        print(f&quot;Ingresos acumulados: {lavadero.ingresos:.2f} €&quot;)
+        print(&quot;----------------------------------------&quot;)
+
+    except ValueError as e: # Captura la excepción de regla de negocio (Requisito 2)
+        print(f&quot;ERROR DE ARGUMENTO: {e}&quot;)
+    except RuntimeError as e: # Captura la excepción de estado (Requisito 3)
+        print(f&quot;ERROR DE ESTADO: {e}&quot;)
+    except Exception as e:
+        print(f&quot;ERROR INESPERADO: {e}&quot;)
+
+</code></pre>
+<h1 id="bloque-3-punto-de-entrada-main-con-ejemplos">Bloque 3: Punto de entrada (main) con ejemplos</h1>
+<ul>
+<li><strong>if <strong>name</strong> == "<strong>main</strong>":</strong>  </li>
+<li>Garantiza que el bloque se ejecute solo si el archivo se ejecuta directamente, no cuando se importa como módulo.  </li>
+<li><strong>lavadero_global = Lavadero():</strong>  </li>
+<li>Se crea una única instancia de Lavadero para acumular ingresos entre simulaciones.  </li>
+<li><strong>Ejemplos de ejecución:</strong>  </li>
+<li><strong>Ejemplo 1:</strong> Prelavado + Secado a mano + Encerado → ingresos esperados 8.70 €.  </li>
+<li><strong>Ejemplo 2:</strong> Sin extras → ingresos esperados 5.00 €.  </li>
+<li><strong>Ejemplo 3:</strong> Encerado sin secado → debe lanzar <code>ValueError</code>.  </li>
+<li><strong>Ejemplo 4:</strong> Solo prelavado → ingresos esperados 6.50 €.  </li>
+<li><strong>Función:</strong> Demostrar distintos casos de uso, validar reglas de negocio y mostrar acumulación de ingresos.</li>
+</ul>
+<pre><code class="language-python">if __name__ == &quot;__main__&quot;:
+
+    lavadero_global = Lavadero() # Usamos una única instancia para acumular ingresos
+
+    # EJEMPLO 1: Lavado completo con prelavado, secado a mano, con encerado (Requisito 8 y 14)
+    # Precio esperado: 5.00 + 1.50 + 1.00 + 1.20 = 8.70 €
+    print(&quot;\n=======================================================&quot;)
+    print(&quot;EJEMPLO 1: Prelavado (S), Secado a mano (S), Encerado (S)&quot;)
+    ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=True, encerado=True)
+
+    # EJEMPLO 2: Lavado rápido sin extras (Requisito 9)
+    # Precio esperado: 5.00 €
+    print(&quot;\n=======================================================&quot;)
+    print(&quot;EJEMPLO 2: Sin extras (Prelavado: N, Secado a mano: N, Encerado: N)&quot;)
+    ejecutarSimulacion(lavadero_global, prelavado=False, secado_mano=False, encerado=False)
+
+    # EJEMPLO 3: Lavado con encerado, pero sin secado a mano (Debe lanzar ValueError - Requisito 2)
+    print(&quot;\n=======================================================&quot;)
+    print(&quot;EJEMPLO 3: ERROR (Encerado S, Secado a mano N)&quot;)
+    ejecutarSimulacion(lavadero_global, prelavado=False, secado_mano=False, encerado=True)
+
+    # EJEMPLO 4: Lavado con prelavado a mano (Requisito 4 y 10)
+    # Precio esperado: 5.00 + 1.50 = 6.50 €
+    print(&quot;\n=======================================================&quot;)
+    print(&quot;EJEMPLO 4: Prelavado (S), Secado a mano (N), Encerado (N)&quot;)
+    ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=False)
+
+</code></pre>
+<pre><code>=======================================================
+EJEMPLO 1: Prelavado (S), Secado a mano (S), Encerado (S)
+--- INICIO: Prueba de Lavado con Opciones Personalizadas ---
+Opciones solicitadas: [Prelavado: True, Secado a mano: True, Encerado: True]
+
+Coche entra. Estado inicial:
+----------------------------------------
+Ingresos Acumulados: 0.00 €
+Ocupado: True
+Prelavado a mano: True
+Secado a mano: True
+Encerado: True
+Fase: 0 - Inactivo
+----------------------------------------
+
+AVANZANDO FASE POR FASE:
+ (COBRADO: 8.70 €) -&gt; Fase actual: 1 - Cobrando
+-&gt; Fase actual: 2 - Haciendo prelavado a mano
+-&gt; Fase actual: 3 - Echándole agua
+-&gt; Fase actual: 4 - Enjabonando
+-&gt; Fase actual: 5 - Pasando rodillos
+-&gt; Fase actual: 6 - Haciendo secado automático
+-&gt; Fase actual: 0 - Inactivo
+
+----------------------------------------
+Lavado completo. Estado final:
+----------------------------------------
+Ingresos Acumulados: 8.70 €
+Ocupado: False
+Prelavado a mano: False
+Secado a mano: False
+Encerado: False
+Fase: 0 - Inactivo
+----------------------------------------
+Ingresos acumulados: 8.70 €
+----------------------------------------
+
+=======================================================
+EJEMPLO 2: Sin extras (Prelavado: N, Secado a mano: N, Encerado: N)
+--- INICIO: Prueba de Lavado con Opciones Personalizadas ---
+Opciones solicitadas: [Prelavado: False, Secado a mano: False, Encerado: False]
+
+Coche entra. Estado inicial:
+----------------------------------------
+Ingresos Acumulados: 8.70 €
+Ocupado: True
+Prelavado a mano: False
+Secado a mano: False
+Encerado: False
+Fase: 0 - Inactivo
+----------------------------------------
+
+AVANZANDO FASE POR FASE:
+ (COBRADO: 5.00 €) -&gt; Fase actual: 1 - Cobrando
+-&gt; Fase actual: 3 - Echándole agua
+-&gt; Fase actual: 4 - Enjabonando
+-&gt; Fase actual: 5 - Pasando rodillos
+-&gt; Fase actual: 7 - Haciendo secado a mano
+-&gt; Fase actual: 0 - Inactivo
+
+----------------------------------------
+Lavado completo. Estado final:
+----------------------------------------
+Ingresos Acumulados: 13.70 €
+Ocupado: False
+Prelavado a mano: False
+Secado a mano: False
+Encerado: False
+Fase: 0 - Inactivo
+----------------------------------------
+Ingresos acumulados: 13.70 €
+----------------------------------------
+
+=======================================================
+EJEMPLO 3: ERROR (Encerado S, Secado a mano N)
+--- INICIO: Prueba de Lavado con Opciones Personalizadas ---
+Opciones solicitadas: [Prelavado: False, Secado a mano: False, Encerado: True]
+ERROR DE ARGUMENTO: No se puede encerar el coche sin secado a mano
+
+=======================================================
+EJEMPLO 4: Prelavado (S), Secado a mano (N), Encerado (N)
+
+
+
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+Cell In[21], line 26
+     24 print("\n=======================================================")
+     25 print("EJEMPLO 4: Prelavado (S), Secado a mano (N), Encerado (N)")
+---&gt; 26 ejecutarSimulacion(lavadero_global, prelavado=True, secado_mano=False)
+
+
+TypeError: ejecutarSimulacion() missing 1 required positional argument: 'encerado'
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

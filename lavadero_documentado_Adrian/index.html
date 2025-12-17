@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Adrian Munoz Garcia">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Lavadero Documentado - Gestor de Lavadero de Coches</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Gestor de Lavadero de Coches</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Lavadero Documentado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Main_app_documentado_Adrian/" class="nav-link">Main Lavadero Documentado</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Main_app_documentado_Adrian/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG/edit/master/docs/lavadero_documentado_Adrian.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#1-encabezado-y-definicion-de-clase" class="nav-link">1. Encabezado y definición de clase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#2-constantes-de-fase" class="nav-link">2. Constantes de fase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#3-constructor-y-estado-inicial" class="nav-link">3. Constructor y estado inicial</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#4-propiedades-de-solo-lectura" class="nav-link">4. Propiedades de solo lectura</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#5-reinicio-de-ciclo-con-terminar" class="nav-link">5. Reinicio de ciclo con terminar()</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#6-inicio-de-lavado-y-validaciones-de-negocio" class="nav-link">6. Inicio de lavado y validaciones de negocio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#7-calculo-y-acumulacion-de-ingresos" class="nav-link">7. Cálculo y acumulación de ingresos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#8-avance-de-fase-y-logica-de-transicion" class="nav-link">8. Avance de fase y lógica de transición</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#9-impresion-de-fase-legible" class="nav-link">9. Impresión de fase legible</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#10-impresion-de-estado-completo" class="nav-link">10. Impresión de estado completo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#11-metodo-auxiliar-para-pruebas-unitarias-no-funcional" class="nav-link">11. Método auxiliar para pruebas unitarias (no funcional)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="1-encabezado-y-definicion-de-clase">1. Encabezado y definición de clase</h1>
+<p><strong>Propósito del módulo:</strong> Modelar un túnel de lavado con estados, reglas de negocio y secuencias de fases.</p>
+<p><strong>Definición de clase Lavadero:</strong> En Python, una clase agrupa datos (atributos) y comportamiento (métodos) de un objeto.</p>
+<p><strong>Docstring de clase:</strong> El texto entre triple comillas describe el objetivo y alcance del componente, útil para documentación y ayuda integrada.</p>
+<p><strong>Nota de fidelidad:</strong> Documentamos tal cual sin corregir incoherencias, señalamos las observaciones cuando afectan al entendimiento.</p>
+<pre><code class="language-python"># lavadero.py
+
+class Lavadero:
+    &quot;&quot;&quot;
+    Simula el estado y las operaciones de un túnel de lavado de coches.
+    Cumple con los requisitos de estado, avance de fase y reglas de negocio.
+    &quot;&quot;&quot;
+
+</code></pre>
+<h1 id="2-constantes-de-fase">2. Constantes de fase</h1>
+<p><strong>Constantes de estado:</strong> Representan fases del proceso como enteros con nombres semánticos, evitando “números mágicos” y mejorando la legibilidad.</p>
+<p><strong>Ventaja:</strong> Cambios futuros en los valores no afectan el código que usa los nombres.</p>
+<p><strong>Listado de fases:</strong> 0 inactivo, 1 cobrando, 2 prelavado, 3 agua, 4 enjabonado, 5 rodillos, 6 secado automático, 7 secado a mano, 8 encerado.</p>
+<pre><code class="language-python"> FASE_INACTIVO = 0
+    FASE_COBRANDO = 1
+    FASE_PRELAVADO_MANO = 2
+    FASE_ECHANDO_AGUA = 3
+    FASE_ENJABONANDO = 4
+    FASE_RODILLOS = 5
+    FASE_SECADO_AUTOMATICO = 6
+    FASE_SECADO_MANO = 7
+    FASE_ENCERADO = 8
+</code></pre>
+<h1 id="3-constructor-y-estado-inicial">3. Constructor y estado inicial</h1>
+<p><strong><strong>init</strong>:</strong> Método especial que se ejecuta al crear una instancia. Inicializa el estado interno.</p>
+<p><strong>Atributos “privados”:</strong> El doble guion bajo activa name mangling (convención para desalentar acceso externo directo).</p>
+<p><strong>Estado base:</strong> ingresos 0.0, fase 0 (inactivo), ocupado False, extras False.</p>
+<p><strong>Llamada a terminar():</strong> Refuerza el estado inicial estableciendo los mismos valores. Aunque redundante, asegura consistencia.</p>
+<pre><code class="language-python">    def __init__(self):
+        &quot;&quot;&quot;
+        Constructor de la clase. Inicializa el lavadero.
+        Cumple con el requisito 1.
+        &quot;&quot;&quot;
+        self.__ingresos = 0.0
+        self.__fase = self.FASE_INACTIVO
+        self.__ocupado = False
+        self.__prelavado_a_mano = False
+        self.__secado_a_mano = False
+        self.__encerado = False
+        self.terminar() 
+
+</code></pre>
+<h1 id="4-propiedades-de-solo-lectura">4. Propiedades de solo lectura</h1>
+<ul>
+<li><strong>@property:</strong> Permite acceder a métodos como si fueran atributos, ofreciendo encapsulación sin exponer variables internas.  </li>
+<li><strong>Getters:</strong> Devuelven el estado actual de fase, ingresos, ocupado y las opciones de extras.  </li>
+<li><strong>Uso:</strong> <code>obj.fase</code>, <code>obj.ingresos</code>, etc., sin paréntesis, manteniendo interfaz clara.</li>
+</ul>
+<pre><code class="language-python">    @property
+    def fase(self):
+        return self.__fase
+
+    @property
+    def ingresos(self):
+        return self.__ingresos
+
+    @property
+    def ocupado(self):
+        return self.__ocupado
+
+    @property
+    def prelavado_a_mano(self):
+        return self.__prelavado_a_mano
+
+    @property
+    def secado_a_mano(self):
+        return self.__secado_a_mano
+
+    @property
+    def encerado(self):
+        return self.__encerado
+
+</code></pre>
+<h1 id="5-reinicio-de-ciclo-con-terminar">5. Reinicio de ciclo con terminar()</h1>
+<ul>
+<li><strong>Función:</strong> Restablece el lavadero a estado inactivo, no ocupado y sin extras.  </li>
+<li><strong>Momento de uso:</strong> Se invoca al finalizar fases terminales y en el constructor.  </li>
+<li><strong>Efecto:</strong> Cierra el ciclo y deja el objeto listo para un nuevo lavado.</li>
+</ul>
+<pre><code class="language-python">    def terminar(self):
+        self.__fase = self.FASE_INACTIVO
+        self.__ocupado = False
+        self.__prelavado_a_mano = False
+        self.__secado_a_mano = False
+        self.__encerado = False
+
+</code></pre>
+<h1 id="6-inicio-de-lavado-y-validaciones-de-negocio">6. Inicio de lavado y validaciones de negocio</h1>
+<ul>
+<li><strong><code>hacerLavado(...)</code>:</strong> Configura un nuevo ciclo con las opciones dadas.  </li>
+<li><strong>Validaciones:</strong>  </li>
+<li>Si el lavadero está ocupado, se levanta <code>RuntimeError</code> (no se admite solapamiento de ciclos).  </li>
+<li>Si se solicita encerado sin secado a mano, se levanta <code>ValueError</code> (combinación no permitida).  </li>
+<li><strong>Configuración:</strong> Define <code>ocupado=True</code>, resetea fase a inactivo y guarda las opciones.</li>
+</ul>
+<pre><code class="language-python">    def hacerLavado(self, prelavado_a_mano, secado_a_mano, encerado):
+        &quot;&quot;&quot;
+        Inicia un nuevo ciclo de lavado, validando reglas de negocio.
+
+        :raises RuntimeError: Si el lavadero está ocupado (Requisito 3).
+        :raises ValueError: Si se intenta encerar sin secado a mano (Requisito 2).
+        &quot;&quot;&quot;
+        if self.__ocupado:
+            raise RuntimeError(&quot;No se puede iniciar un nuevo lavado mientras el lavadero está ocupado&quot;)
+
+        if not secado_a_mano and encerado:
+            raise ValueError(&quot;No se puede encerar el coche sin secado a mano&quot;)
+
+        self.__fase = self.FASE_INACTIVO  
+        self.__ocupado = True
+        self.__prelavado_a_mano = prelavado_a_mano
+        self.__secado_a_mano = secado_a_mano
+        self.__encerado = encerado
+
+</code></pre>
+<h1 id="7-calculo-y-acumulacion-de-ingresos">7. Cálculo y acumulación de ingresos</h1>
+<ul>
+<li><strong><code>_cobrar()</code>:</strong> Método interno (por convención) que calcula el coste del lavado y lo suma a los ingresos acumulados.  </li>
+<li><strong>Tarifa:</strong> Base 5.00; extras: +1.50 (prelavado), +1.20 (secado a mano), +1.00 (encerado).  </li>
+<li><strong>Retorno:</strong> Devuelve el importe cobrado para imprimirlo al avanzar la primera fase.  </li>
+<li><strong>Nota:</strong> Los importes están definidos en código; no están parametrizados externamente.</li>
+</ul>
+<pre><code class="language-python">    def _cobrar(self):
+        &quot;&quot;&quot;
+        Calcula y añade los ingresos según las opciones seleccionadas (Requisitos 4-8).
+        Precio base: 5.00€ (Implícito, 5.00€ de base + 1.50€ de prelavado + 1.00€ de secado + 1.20€ de encerado = 8.70€)
+        &quot;&quot;&quot;
+        coste_lavado = 5.00
+
+        if self.__prelavado_a_mano:
+            coste_lavado += 1.50 
+
+        if self.__secado_a_mano:
+            coste_lavado += 1.20 
+
+        if self.__encerado:
+            coste_lavado += 1.00 
+
+        self.__ingresos += coste_lavado
+        return coste_lavado
+
+</code></pre>
+<h1 id="8-avance-de-fase-y-logica-de-transicion">8. Avance de fase y lógica de transición</h1>
+<ul>
+<li><strong><code>avanzarFase()</code>:</strong> Orquesta la progresión de fases según el estado y las opciones.  </li>
+<li><strong>Guard clause:</strong> Si no está ocupado, retorna sin cambios (evita operar fuera de ciclo).  </li>
+<li><strong>Cobro al inicio:</strong> De fase 0 (inactivo) a 1 (cobrando) se ejecuta <code>_cobrar()</code> y se imprime el importe.  </li>
+<li><strong>Ramas principales:</strong>  </li>
+<li>1 → 2 si hay prelavado, en otro caso 1 → 3.  </li>
+<li>Secuencia 2 → 3 → 4 → 5.  </li>
+<li>En 5, decisión de secado: si <code>secado_a_mano</code> True, va a 6 (automático); si False, va a 7 (mano). Observación: semántica invertida respecto al nombre del flag.  </li>
+<li><strong>Fases 6/7/8:</strong> Terminan el ciclo llamando a <code>terminar()</code>. La fase 8 (encerado) no se alcanza por transición en el código actual.  </li>
+<li><strong>Error de fase:</strong> Si aparece un estado no contemplado, <code>RuntimeError</code> con mensaje explicativo.</li>
+</ul>
+<pre><code class="language-python">    def avanzarFase(self):
+
+        if not self.__ocupado:
+            return
+
+        if self.__fase == self.FASE_INACTIVO:
+            coste_cobrado = self._cobrar()
+            self.__fase = self.FASE_COBRANDO
+            print(f&quot; (COBRADO: {coste_cobrado:.2f} €) &quot;, end=&quot;&quot;)
+
+        elif self.__fase == self.FASE_COBRANDO:
+            if self.__prelavado_a_mano:
+                self.__fase = self.FASE_PRELAVADO_MANO
+            else:
+                self.__fase = self.FASE_ECHANDO_AGUA 
+
+        elif self.__fase == self.FASE_PRELAVADO_MANO:
+            self.__fase = self.FASE_ECHANDO_AGUA
+
+        elif self.__fase == self.FASE_ECHANDO_AGUA:
+            self.__fase = self.FASE_ENJABONANDO
+
+        elif self.__fase == self.FASE_ENJABONANDO:
+            self.__fase = self.FASE_RODILLOS
+
+        elif self.__fase == self.FASE_RODILLOS:
+            if self.__secado_a_mano:
+                self.__fase = self.FASE_SECADO_AUTOMATICO 
+
+            else:
+                self.__fase = self.FASE_SECADO_MANO
+
+        elif self.__fase == self.FASE_SECADO_AUTOMATICO:
+            self.terminar()
+
+        elif self.__fase == self.FASE_SECADO_MANO:
+
+            self.terminar() 
+
+        elif self.__fase == self.FASE_ENCERADO:
+            self.terminar() 
+
+        else:
+            raise RuntimeError(f&quot;Estado no válido: Fase {self.__fase}. El lavadero va a estallar...&quot;)
+
+</code></pre>
+<h1 id="9-impresion-de-fase-legible">9. Impresión de fase legible</h1>
+<ul>
+<li><strong><code>imprimir_fase()</code>:</strong> Traduce la fase actual a un texto amigable usando un diccionario <code>fases_map</code>.  </li>
+<li><strong><code>print(..., end="")</code>:</strong> Evita salto de línea, permitiendo concatenar mensajes de estado en la misma línea.  </li>
+<li><strong>Fallback:</strong> Si la fase no está mapeada, imprime un mensaje con el número de fase y “estado no válido”.</li>
+</ul>
+<pre><code class="language-python">    def imprimir_fase(self):
+        fases_map = {
+            self.FASE_INACTIVO: &quot;0 - Inactivo&quot;,
+            self.FASE_COBRANDO: &quot;1 - Cobrando&quot;,
+            self.FASE_PRELAVADO_MANO: &quot;2 - Haciendo prelavado a mano&quot;,
+            self.FASE_ECHANDO_AGUA: &quot;3 - Echándole agua&quot;,
+            self.FASE_ENJABONANDO: &quot;4 - Enjabonando&quot;,
+            self.FASE_RODILLOS: &quot;5 - Pasando rodillos&quot;,
+            self.FASE_SECADO_AUTOMATICO: &quot;6 - Haciendo secado automático&quot;,
+            self.FASE_SECADO_MANO: &quot;7 - Haciendo secado a mano&quot;,
+            self.FASE_ENCERADO: &quot;8 - Encerando a mano&quot;,
+        }
+        print(fases_map.get(self.__fase, f&quot;{self.__fase} - En estado no válido&quot;), end=&quot;&quot;)
+
+</code></pre>
+<h1 id="10-impresion-de-estado-completo">10. Impresión de estado completo</h1>
+<ul>
+<li><strong><code>imprimir_estado()</code>:</strong> Presenta un resumen del estado actual: ingresos acumulados, si está ocupado, opciones seleccionadas y fase.  </li>
+<li><strong>Formato:</strong> Usa separadores y formatea ingresos con dos decimales (<code>{self.ingresos:.2f}</code>).  </li>
+<li><strong>Composición:</strong> Llama a <code>imprimir_fase()</code> para no duplicar lógica de texto de fase.</li>
+</ul>
+<pre><code class="language-python">    def imprimir_estado(self):
+        print(&quot;----------------------------------------&quot;)
+        print(f&quot;Ingresos Acumulados: {self.ingresos:.2f} €&quot;)
+        print(f&quot;Ocupado: {self.ocupado}&quot;)
+        print(f&quot;Prelavado a mano: {self.prelavado_a_mano}&quot;)
+        print(f&quot;Secado a mano: {self.secado_a_mano}&quot;)
+        print(f&quot;Encerado: {self.encerado}&quot;)
+        print(&quot;Fase: &quot;, end=&quot;&quot;)
+        self.imprimir_fase()
+        print(&quot;\n----------------------------------------&quot;)
+
+</code></pre>
+<h1 id="11-metodo-auxiliar-para-pruebas-unitarias-no-funcional">11. Método auxiliar para pruebas unitarias (no funcional)</h1>
+<ul>
+<li><strong>Objetivo declarado:</strong> Ejecutar un ciclo completo devolviendo la lista de fases visitadas.  </li>
+<li><strong>Inconsistencia clave:</strong> Usa <code>self.lavadero</code> (atributo inexistente en la clase). Cualquier llamada lanzaría <code>AttributeError</code>.  </li>
+<li><strong>Estructura prevista:</strong> Parecería querer contener una instancia interna o pasarla como parámetro; tal como está, no debe usarse.  </li>
+<li><strong>Límite de seguridad:</strong> Comprueba que no se excedan 15 pasos para evitar bucles infinitos, buena práctica en simulaciones.  </li>
+<li><strong>Conclusión:</strong> Método útil conceptualmente, pero incorrecto en la implementación actual.</li>
+</ul>
+<pre><code class="language-python">    # Esta función es útil para pruebas unitarias, no es parte del lavadero real
+    # nos crea un array con las fases visitadas en un ciclo completo
+
+    def ejecutar_y_obtener_fases(self, prelavado, secado, encerado):
+        &quot;&quot;&quot;Ejecuta un ciclo completo y devuelve la lista de fases visitadas.&quot;&quot;&quot;
+        self.lavadero.hacerLavado(prelavado, secado, encerado)
+        fases_visitadas = [self.lavadero.fase]
+
+        while self.lavadero.ocupado:
+            # Usamos un límite de pasos para evitar bucles infinitos en caso de error
+            if len(fases_visitadas) &gt; 15:
+                raise Exception(&quot;Bucle infinito detectado en la simulación de fases.&quot;)
+            self.lavadero.avanzarFase()
+            fases_visitadas.append(self.lavadero.fase)
+
+        return fases_visitadas
+
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

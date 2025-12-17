@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Adrian Munoz Garcia">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Informe de Pruebas Unitarias – Lavadero - Gestor de Lavadero de Coches</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Gestor de Lavadero de Coches</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../lavadero_documentado_Adrian/" class="nav-link">Lavadero Documentado</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../Main_app_documentado_Adrian/" class="nav-link">Main Lavadero Documentado</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/vjp-adrianMG1/Unidad1-TareaRA1-AdrianMG/edit/master/docs/Pruebas.md" class="nav-link"><i class="fa-brands fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#informe-de-pruebas-unitarias-lavadero" class="nav-link">Informe de Pruebas Unitarias – Lavadero</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-codigo-de-pruebas" class="nav-link">1. Código de pruebas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-ejecucion-inicial-codigo-erroneo" class="nav-link">2. Ejecución inicial (código erróneo)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-correccion-del-metodo-ejecutar_y_obtener_fases" class="nav-link">3. Corrección del método ejecutar_y_obtener_fases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-correccion-del-metodo-_cobrar" class="nav-link">4. Corrección del método _cobrar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-correccion-de-la-transicion-en-la-fase-de-rodillos" class="nav-link">5. Corrección de la transición en la fase de rodillos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-correccion-de-la-transicion-desde-la-fase-7-secado-a-mano-hacia-la-fase-8-encerado" class="nav-link">6. Corrección de la transición desde la fase 7 (Secado a mano) hacia la fase 8 (Encerado)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-conclusion-final" class="nav-link">7. Conclusión final</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="informe-de-pruebas-unitarias-lavadero">Informe de Pruebas Unitarias – Lavadero</h1>
+<h2 id="1-codigo-de-pruebas">1. Código de pruebas</h2>
+<hr />
+<pre><code class="language-bash">def test1_estado_inicial_correcto(self):
+        &quot;&quot;&quot;Test 1: Estado inicial debe ser inactivo, sin ingresos y sin opciones.&quot;&quot;&quot;
+        self.assertEqual(self.lavadero.fase, Lavadero.FASE_INACTIVO)
+        self.assertEqual(self.lavadero.ingresos, 0.0)
+        self.assertFalse(self.lavadero.ocupado)
+
+    def test2_excepcion_encerado_sin_secado(self):
+        &quot;&quot;&quot;Test 2: Encerar sin secado a mano debe lanzar ValueError.&quot;&quot;&quot;
+        with self.assertRaises(ValueError):
+            self.lavadero.hacerLavado(False, False, True)
+
+    def test3_excepcion_lavado_ocupado(self):
+        &quot;&quot;&quot;Test 3: Iniciar un lavado mientras otro está en marcha debe lanzar RuntimeError.&quot;&quot;&quot;
+        self.lavadero.hacerLavado(False, False, False)
+        with self.assertRaises(RuntimeError):
+            self.lavadero.hacerLavado(True, True, True)
+
+    def test4_prelavado_ingresos_y_fases(self):
+        &quot;&quot;&quot;Test 4 y 10: Prelavado a mano -&gt; ingresos 6.50€, fases [0,1,2,3,4,5,6,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(True, False, False)
+        self.assertEqual(self.lavadero.ingresos, 6.50)
+        self.assertEqual(fases, [0,1,2,3,4,5,6,0])
+
+    def test5_secado_ingresos_y_fases(self):
+        &quot;&quot;&quot;Test 5 y 11: Secado a mano -&gt; ingresos 6.00€, fases [0,1,3,4,5,7,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(False, True, False)
+        self.assertEqual(self.lavadero.ingresos, 6.00)
+        self.assertEqual(fases, [0,1,3,4,5,7,0])
+
+    def test6_secado_y_encerado(self):
+        &quot;&quot;&quot;Test 6 y 12: Secado + encerado -&gt; ingresos 7.20€, fases [0,1,3,4,5,7,8,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(False, True, True)
+        self.assertEqual(self.lavadero.ingresos, 7.20)
+        self.assertEqual(fases, [0,1,3,4,5,7,8,0])
+
+    def test7_prelavado_y_secado(self):
+        &quot;&quot;&quot;Test 7 y 13: Prelavado + secado -&gt; ingresos 7.50€, fases [0,1,2,3,4,5,7,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(True, True, False)
+        self.assertEqual(self.lavadero.ingresos, 7.50)
+        self.assertEqual(fases, [0,1,2,3,4,5,7,0])
+
+    def test8_prelavado_secado_encerado(self):
+        &quot;&quot;&quot;Test 8 y 14: Prelavado + secado + encerado -&gt; ingresos 8.70€, fases [0,1,2,3,4,5,7,8,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(True, True, True)
+        self.assertEqual(self.lavadero.ingresos, 8.70)
+        self.assertEqual(fases, [0,1,2,3,4,5,7,8,0])
+
+    def test9_sin_extras(self):
+        &quot;&quot;&quot;Test 9: Lavado rápido sin extras -&gt; ingresos 5.00€, fases [0,1,3,4,5,6,0].&quot;&quot;&quot;
+        fases = self.lavadero.ejecutar_y_obtener_fases(False, False, False)
+        self.assertEqual(self.lavadero.ingresos, 5.00)
+        self.assertEqual(fases, [0,1,3,4,5,6,0])
+</code></pre>
+<h2 id="2-ejecucion-inicial-codigo-erroneo">2. Ejecución inicial (código erróneo)</h2>
+<p><img alt="Captura_de_los_test_unitarios_mal" src="../capturas/Ejecucion_de_todos_los_tests.png" /></p>
+<h3 id="resumen">Resumen</h3>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Resultado esperado</th>
+<th>Resultado obtenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test 1</td>
+<td>Estado inicial correcto</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Test 2</td>
+<td>ValueError al encerar sin secado</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Test 3</td>
+<td>RuntimeError al iniciar lavado ocupado</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>Test 4–9</td>
+<td>Secuencias de fases e ingresos correctos</td>
+<td><strong>ERROR</strong> (AttributeError)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-correccion-del-metodo-ejecutar_y_obtener_fases">3. Corrección del método <code>ejecutar_y_obtener_fases</code></h2>
+<hr />
+<p>Método con código erróneo
+<img alt="Captura_método_erróneo" src="../capturas/Ejecutar_y_obtener_fases_mal.png" /></p>
+<p>En la ejecución inicial, varios tests daban <strong>ERROR</strong> debido a un fallo en la implementación del método <code>ejecutar_y_obtener_fases</code>.<br />
+El error concreto era:</p>
+<pre><code class="language-bash">        AttributeError: 'Lavadero' object has no attribute 'lavadero'
+</code></pre>
+<p>Esto ocurría porque dentro del método se llamaba a <code>self.lavadero.hacerLavado(...)</code>, pero la clase <code>Lavadero</code> no tiene ningún atributo llamado <code>lavadero</code>.  </p>
+<h3 id="arreglo-realizado">🔧 Arreglo realizado</h3>
+<ul>
+<li>Se reemplazó la llamada incorrecta <code>self.lavadero.hacerLavado(...)</code> por <code>self.hacerLavado(...)</code>.  </li>
+<li>Se ajustó también el acceso a las propiedades (<code>self.fase</code>, <code>self.ocupado</code>) para que usen directamente la instancia actual.</li>
+</ul>
+<p><img alt="Captura_método_correcto" src="../capturas/Ejecutar_y_obtener_fases_bien.png" /></p>
+<h3 id="resultado-tras-el-cambio">📌 Resultado tras el cambio</h3>
+<ul>
+<li>Los tests ya no lanzan <strong>ERROR</strong> por <code>AttributeError</code>.  </li>
+<li>Ahora los tests se ejecutan y muestran <strong>FAIL</strong> en los casos donde la lógica de precios y fases aún no coincide con lo esperado.  </li>
+<li>Esto permite avanzar en la depuración: primero corregimos la ejecución del método, y después ajustaremos la lógica de negocio (precios y fases).</li>
+</ul>
+<hr />
+<h2 id="4-correccion-del-metodo-_cobrar">4. Corrección del método <code>_cobrar</code></h2>
+<hr />
+<p>Bloque de código erróneo<br />
+<img alt="Captura_cobrar_erróneo" src="../capturas/Metodo_cobrar_mal.png" /></p>
+<p>En la ejecución tras corregir <code>ejecutar_y_obtener_fases</code>, varios tests pasaron de <strong>ERROR</strong> a <strong>FAIL</strong>.<br />
+El fallo concreto estaba en los <strong>ingresos calculados</strong>:  </p>
+<ul>
+<li>El test de secado a mano (<code>test5_secado_ingresos_y_fases</code>) esperaba <strong>6.00 €</strong>, pero el resultado era <strong>6.20 €</strong>.  </li>
+<li>El test de secado + encerado (<code>test6_secado_y_encerado</code>) esperaba <strong>7.20 €</strong>, pero el resultado era <strong>7.00 €</strong>.  </li>
+<li>Otros tests también mostraban diferencias en los ingresos acumulados.</li>
+</ul>
+<p>Esto ocurría porque en el método <code>_cobrar</code> los valores de los extras estaban mal asignados:<br />
+- <strong>Secado a mano</strong> sumaba 1.20 € en lugar de 1.00 €.<br />
+- <strong>Encerado</strong> sumaba 1.00 € en lugar de 1.20 €.</p>
+<h3 id="arreglo-realizado_1">🔧 Arreglo realizado</h3>
+<ul>
+<li>Se corrigió el valor del <strong>secado a mano</strong>: ahora suma 1.00 €.  </li>
+<li>Se corrigió el valor del <strong>encerado</strong>: ahora suma 1.20 €.  </li>
+<li>Se mantuvo el precio base de 5.00 € y el prelavado a mano en 1.50 €.</li>
+</ul>
+<p><img alt="Captura_cobrar_correcto" src="../capturas/Metodo_cobrar_bien.png" /></p>
+<h3 id="resultado-tras-el-cambio_1">📌 Resultado tras el cambio</h3>
+<ul>
+<li>Los tests de ingresos (<code>test5</code>, <code>test6</code>, <code>test7</code>, <code>test8</code>, <code>test9</code>) ahora muestran los valores correctos.  </li>
+<li>Los FAIL por diferencias de precio desaparecen.  </li>
+<li>Los tests aún muestran <strong>FAIL</strong> en algunos casos de fases, lo que indica que el siguiente paso es corregir la lógica de transición en <code>avanzarFase</code>.</li>
+</ul>
+<h2 id="5-correccion-de-la-transicion-en-la-fase-de-rodillos">5. Corrección de la transición en la fase de rodillos</h2>
+<hr />
+<p>Bloque de código erróneo<br />
+<img alt="Captura_fase_rodillos_erróneo" src="../capturas/Avanzarfase_mal.png" /></p>
+<p>Tras corregir los ingresos en <code>_cobrar</code>, varios tests seguían dando <strong>FAIL</strong>.<br />
+El fallo concreto estaba en las <strong>secuencias de fases</strong>:  </p>
+<ul>
+<li>El test de secado a mano (<code>test5_secado_ingresos_y_fases</code>) esperaba terminar en la fase <strong>7 (Secado a mano)</strong>, pero el flujo terminaba en la fase <strong>6 (Secado automático)</strong>.  </li>
+<li>El test de lavado sin extras (<code>test9_sin_extras</code>) esperaba terminar en la fase <strong>6 (Secado automático)</strong>, pero el flujo terminaba en la fase <strong>7 (Secado a mano)</strong>.  </li>
+</ul>
+<p>Esto ocurría porque la condición en el bloque de rodillos estaba <strong>invertida</strong>:<br />
+- Si <code>secado_a_mano = True</code>, el código enviaba a fase 6 (automático).<br />
+- Si <code>secado_a_mano = False</code>, el código enviaba a fase 7 (manual).  </p>
+<h3 id="arreglo-realizado_2">🔧 Arreglo realizado</h3>
+<ul>
+<li>Se corrigió la condición en el bloque <code>elif self.__fase == self.FASE_RODILLOS</code>:  </li>
+<li>Si <strong>secado_a_mano = True</strong> → pasar a <strong>FASE_SECADO_MANO (7)</strong>.  </li>
+<li>Si <strong>secado_a_mano = False</strong> → pasar a <strong>FASE_SECADO_AUTOMATICO (6)</strong>.  </li>
+</ul>
+<p><img alt="Captura_fase_rodillos_correcto" src="../capturas/Avanzarfase_bien.png" /></p>
+<h3 id="resultado-tras-el-cambio_2">📌 Resultado tras el cambio</h3>
+<ul>
+<li>El test de secado a mano (<code>test5</code>) ahora muestra la secuencia correcta: <code>[0,1,3,4,5,7,0]</code>.  </li>
+<li>El test sin extras (<code>test9</code>) ahora muestra la secuencia correcta: <code>[0,1,3,4,5,6,0]</code>.  </li>
+<li>Los FAIL por rutas incorrectas desaparecen.  </li>
+<li>Los tests con encerado aún fallan, lo que indica que el siguiente paso es corregir la transición desde la fase 7 hacia la fase 8 cuando se selecciona encerado.</li>
+</ul>
+<h2 id="6-correccion-de-la-transicion-desde-la-fase-7-secado-a-mano-hacia-la-fase-8-encerado">6. Corrección de la transición desde la fase 7 (Secado a mano) hacia la fase 8 (Encerado)</h2>
+<hr />
+<p>Bloque de código erróneo<br />
+<img alt="Captura_fase7_erróneo" src="../capturas/Fase7_mal.png" /></p>
+<p>Tras corregir la transición en la fase de rodillos, varios tests seguían dando <strong>FAIL</strong>.<br />
+El fallo concreto estaba en los <strong>lavados que incluían encerado junto al secado a mano</strong>:  </p>
+<ul>
+<li>El test de secado + encerado (<code>test6_secado_y_encerado</code>) esperaba la secuencia <code>[0,1,3,4,5,7,8,0]</code>, pero el flujo terminaba en <code>[0,1,3,4,5,7,0]</code>.  </li>
+<li>El test de prelavado + secado + encerado (<code>test8_prelavado_secado_encerado</code>) esperaba <code>[0,1,2,3,4,5,7,8,0]</code>, pero el flujo terminaba en <code>[0,1,2,3,4,5,7,0]</code>.  </li>
+</ul>
+<p>Esto ocurría porque el bloque de transición en la fase 7 llamaba directamente a <code>terminar()</code>, sin comprobar si había que pasar por la fase 8 (encerado).</p>
+<h3 id="arreglo-realizado_3">🔧 Arreglo realizado</h3>
+<ul>
+<li>Se modificó el bloque <code>elif self.__fase == self.FASE_SECADO_MANO</code>:  </li>
+<li>Si <strong>encerado = True</strong> → pasar a <strong>FASE_ENCERADO (8)</strong>.  </li>
+<li>Si <strong>encerado = False</strong> → llamar a <code>terminar()</code>.  </li>
+</ul>
+<p><img alt="Captura_fase7_correcto" src="../capturas/Fase7_bien.png" /></p>
+<h3 id="resultado-tras-el-cambio_3">📌 Resultado tras el cambio</h3>
+<ul>
+<li>El test de secado + encerado (<code>test6</code>) ahora muestra la secuencia correcta: <code>[0,1,3,4,5,7,8,0]</code>.  </li>
+<li>El test de prelavado + secado + encerado (<code>test8</code>) ahora muestra la secuencia correcta: <code>[0,1,2,3,4,5,7,8,0]</code>.  </li>
+<li>Los FAIL por rutas incompletas desaparecen.  </li>
+<li>Con esta corrección, todos los tests de ingresos y fases pasan a <strong>OK</strong>.</li>
+</ul>
+<h2 id="7-conclusion-final">7. Conclusión final</h2>
+<hr />
+<p>Tras realizar todas las correcciones paso a paso —desde la ejecución del método, los precios en <code>_cobrar</code>, hasta la lógica de transición entre fases— se ha conseguido que <strong>todos los tests unitarios pasen correctamente</strong>.</p>
+<p>Esto demuestra que el sistema de lavado cumple con los <strong>14 requisitos funcionales</strong> definidos, y que el comportamiento del programa es el esperado en todos los casos.</p>
+<h3 id="resultado-final">📌 Resultado final</h3>
+<ul>
+<li>Todos los tests pasan (<code>OK</code>).</li>
+<li>Ingresos calculados correctamente.</li>
+<li>Secuencias de fases completas y coherentes.</li>
+<li>Excepciones lanzadas correctamente en casos inválidos.</li>
+</ul>
+<p><img alt="Captura_tests_OK" src="../capturas/Tests_unitarios_correctos.png" /></p>
+<hr />
+<p>Este resultado valida que el código es funcional, reproducible y cumple con los criterios de calidad exigidos.<br />
+Además, el uso de pruebas unitarias permite detectar errores de forma automática y documentar claramente el proceso de corrección.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
