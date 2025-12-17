@@ -108,7 +108,7 @@ Esto ocurría porque dentro del método se llamaba a `self.lavadero.hacerLavado(
 ---
 
 Método con código erróneo  
-![Captura_cobrar_erróneo](../capturas/Cobrar_mal.png)
+![Captura_cobrar_erróneo](../capturas/Metodo_cobrar_mal.png)
 
 En la ejecución tras corregir `ejecutar_y_obtener_fases`, varios tests pasaron de **ERROR** a **FAIL**.  
 El fallo concreto estaba en los **ingresos calculados**:  
@@ -126,11 +126,12 @@ Esto ocurría porque en el método `_cobrar` los valores de los extras estaban m
 - Se corrigió el valor del **encerado**: ahora suma 1.20 €.  
 - Se mantuvo el precio base de 5.00 € y el prelavado a mano en 1.50 €.
 
-![Captura_cobrar_correcto](../capturas/Cobrar_bien.png)
+![Captura_cobrar_correcto](../capturas/Metodo_cobrar_bien.png)
 
 ### 📌 Resultado tras el cambio
 - Los tests de ingresos (`test5`, `test6`, `test7`, `test8`, `test9`) ahora muestran los valores correctos.  
 - Los FAIL por diferencias de precio desaparecen.  
 - Los tests aún muestran **FAIL** en algunos casos de fases, lo que indica que el siguiente paso es corregir la lógica de transición en `avanzarFase`.
+
 
 
