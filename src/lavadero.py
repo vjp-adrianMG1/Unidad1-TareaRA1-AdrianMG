@@ -130,10 +130,9 @@ class Lavadero:
         
         elif self.__fase == self.FASE_RODILLOS:
             if self.__secado_a_mano:
-                self.__fase = self.FASE_SECADO_AUTOMATICO 
-
-            else:
                 self.__fase = self.FASE_SECADO_MANO
+            else:
+                self.__fase = self.FASE_SECADO_AUTOMATICO
         
         elif self.__fase == self.FASE_SECADO_AUTOMATICO:
             self.terminar()
