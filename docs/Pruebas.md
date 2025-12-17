@@ -163,5 +163,30 @@ Esto ocurría porque la condición en el bloque de rodillos estaba **invertida**
 - Los FAIL por rutas incorrectas desaparecen.  
 - Los tests con encerado aún fallan, lo que indica que el siguiente paso es corregir la transición desde la fase 7 hacia la fase 8 cuando se selecciona encerado.
 
+## 6. Corrección de la transición desde la fase 7 (Secado a mano) hacia la fase 8 (Encerado)
 
+---
 
+Bloque de código erróneo  
+![Captura_fase7_erróneo](../capturas/Fase7_mal.png)
+
+Tras corregir la transición en la fase de rodillos, varios tests seguían dando **FAIL**.  
+El fallo concreto estaba en los **lavados que incluían encerado junto al secado a mano**:  
+
+- El test de secado + encerado (`test6_secado_y_encerado`) esperaba la secuencia `[0,1,3,4,5,7,8,0]`, pero el flujo terminaba en `[0,1,3,4,5,7,0]`.  
+- El test de prelavado + secado + encerado (`test8_prelavado_secado_encerado`) esperaba `[0,1,2,3,4,5,7,8,0]`, pero el flujo terminaba en `[0,1,2,3,4,5,7,0]`.  
+
+Esto ocurría porque el bloque de transición en la fase 7 llamaba directamente a `terminar()`, sin comprobar si había que pasar por la fase 8 (encerado).
+
+### 🔧 Arreglo realizado
+- Se modificó el bloque `elif self.__fase == self.FASE_SECADO_MANO`:  
+  - Si **encerado = True** → pasar a **FASE_ENCERADO (8)**.  
+  - Si **encerado = False** → llamar a `terminar()`.  
+
+![Captura_fase7_correcto](../capturas/Fase7_bien.png)
+
+### 📌 Resultado tras el cambio
+- El test de secado + encerado (`test6`) ahora muestra la secuencia correcta: `[0,1,3,4,5,7,8,0]`.  
+- El test de prelavado + secado + encerado (`test8`) ahora muestra la secuencia correcta: `[0,1,2,3,4,5,7,8,0]`.  
+- Los FAIL por rutas incompletas desaparecen.  
+- Con esta corrección, todos los tests de ingresos y fases pasan a **OK**.
