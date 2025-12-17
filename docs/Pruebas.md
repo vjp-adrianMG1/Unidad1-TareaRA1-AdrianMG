@@ -190,3 +190,24 @@ Esto ocurría porque el bloque de transición en la fase 7 llamaba directamente 
 - El test de prelavado + secado + encerado (`test8`) ahora muestra la secuencia correcta: `[0,1,2,3,4,5,7,8,0]`.  
 - Los FAIL por rutas incompletas desaparecen.  
 - Con esta corrección, todos los tests de ingresos y fases pasan a **OK**.
+
+## 7. Conclusión final
+
+---
+
+Tras realizar todas las correcciones paso a paso —desde la ejecución del método, los precios en `_cobrar`, hasta la lógica de transición entre fases— se ha conseguido que **todos los tests unitarios pasen correctamente**.
+
+Esto demuestra que el sistema de lavado cumple con los **14 requisitos funcionales** definidos, y que el comportamiento del programa es el esperado en todos los casos.
+
+### 📌 Resultado final
+- Todos los tests pasan (`OK`).
+- Ingresos calculados correctamente.
+- Secuencias de fases completas y coherentes.
+- Excepciones lanzadas correctamente en casos inválidos.
+
+![Captura_tests_OK](../capturas/Tests_unitarios_correctos.png)
+
+---
+
+Este resultado valida que el código es funcional, reproducible y cumple con los criterios de calidad exigidos.  
+Además, el uso de pruebas unitarias permite detectar errores de forma automática y documentar claramente el proceso de corrección.
