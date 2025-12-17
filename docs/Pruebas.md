@@ -107,7 +107,7 @@ Esto ocurría porque dentro del método se llamaba a `self.lavadero.hacerLavado(
 
 ---
 
-Método con código erróneo  
+Bloque de código erróneo  
 ![Captura_cobrar_erróneo](../capturas/Metodo_cobrar_mal.png)
 
 En la ejecución tras corregir `ejecutar_y_obtener_fases`, varios tests pasaron de **ERROR** a **FAIL**.  
@@ -133,5 +133,32 @@ Esto ocurría porque en el método `_cobrar` los valores de los extras estaban m
 - Los FAIL por diferencias de precio desaparecen.  
 - Los tests aún muestran **FAIL** en algunos casos de fases, lo que indica que el siguiente paso es corregir la lógica de transición en `avanzarFase`.
 
+## 5. Corrección de la transición en la fase de rodillos
 
+---
 
+Bloque de código erróneo  
+![Captura_fase_rodillos_erróneo](../capturas/FaseRodillos_mal.png)
+
+Tras corregir los ingresos en `_cobrar`, varios tests seguían dando **FAIL**.  
+El fallo concreto estaba en las **secuencias de fases**:  
+
+- El test de secado a mano (`test5_secado_ingresos_y_fases`) esperaba terminar en la fase **7 (Secado a mano)**, pero el flujo terminaba en la fase **6 (Secado automático)**.  
+- El test de lavado sin extras (`test9_sin_extras`) esperaba terminar en la fase **6 (Secado automático)**, pero el flujo terminaba en la fase **7 (Secado a mano)**.  
+
+Esto ocurría porque la condición en el bloque de rodillos estaba **invertida**:  
+- Si `secado_a_mano = True`, el código enviaba a fase 6 (automático).  
+- Si `secado_a_mano = False`, el código enviaba a fase 7 (manual).  
+
+### 🔧 Arreglo realizado
+- Se corrigió la condición en el bloque `elif self.__fase == self.FASE_RODILLOS`:  
+  - Si **secado_a_mano = True** → pasar a **FASE_SECADO_MANO (7)**.  
+  - Si **secado_a_mano = False** → pasar a **FASE_SECADO_AUTOMATICO (6)**.  
+
+![Captura_fase_rodillos_correcto](../capturas/FaseRodillos_bien.png)
+
+### 📌 Resultado tras el cambio
+- El test de secado a mano (`test5`) ahora muestra la secuencia correcta: `[0,1,3,4,5,7,0]`.  
+- El test sin extras (`test9`) ahora muestra la secuencia correcta: `[0,1,3,4,5,6,0]`.  
+- Los FAIL por rutas incorrectas desaparecen.  
+- Los tests con encerado aún fallan, lo que indica que el siguiente paso es corregir la transición desde la fase 7 hacia la fase 8 cuando se selecciona encerado.
