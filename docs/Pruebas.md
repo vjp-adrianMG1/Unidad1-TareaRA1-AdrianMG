@@ -138,7 +138,7 @@ Esto ocurría porque en el método `_cobrar` los valores de los extras estaban m
 ---
 
 Bloque de código erróneo  
-![Captura_fase_rodillos_erróneo](../capturas/Avanzarfase_bmal.png)
+![Captura_fase_rodillos_erróneo](../capturas/Avanzarfase_mal.png)
 
 Tras corregir los ingresos en `_cobrar`, varios tests seguían dando **FAIL**.  
 El fallo concreto estaba en las **secuencias de fases**:  
@@ -162,5 +162,6 @@ Esto ocurría porque la condición en el bloque de rodillos estaba **invertida**
 - El test sin extras (`test9`) ahora muestra la secuencia correcta: `[0,1,3,4,5,6,0]`.  
 - Los FAIL por rutas incorrectas desaparecen.  
 - Los tests con encerado aún fallan, lo que indica que el siguiente paso es corregir la transición desde la fase 7 hacia la fase 8 cuando se selecciona encerado.
+
 
 
